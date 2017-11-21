@@ -50,6 +50,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /\.(ico)$/i,
+        loader: 'file?name=[name].[ext]'
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {

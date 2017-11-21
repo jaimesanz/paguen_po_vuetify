@@ -67,6 +67,7 @@
           </v-layout>
         </v-slide-y-transition>
       </v-container>
+      <router-view></router-view>
     </v-content>
     <v-navigation-drawer
       temporary

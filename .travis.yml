@@ -1,3 +1,9 @@
+language: node
+
+script:
+  - yarn
+  - yarn run build
+
 deploy:
   provider: pages
   skip_cleanup: true

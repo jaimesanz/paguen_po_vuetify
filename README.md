@@ -1,5 +1,7 @@
 # paguen_po_vuetify
 
+[![Build Status](https://travis-ci.org/jaimesanz/paguen_po_vuetify.svg?branch=master)](https://travis-ci.org/jaimesanz/paguen_po_vuetify)
+
 > A Vue.js project
 
 ## Build Setup

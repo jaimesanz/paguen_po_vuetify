@@ -30,9 +30,30 @@
       <v-toolbar-title>PaguenPo</v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height>
-        <v-layout justify-center align-center>
-          <p>Endpoint es {{api.API_BASE_URL}}</p>
+      <v-container>
+        <v-layout>
+          <v-flex>
+            <p>Login url is {{api.LOGIN_URL}}</p>
+          </v-flex>
+        </v-layout>
+        <v-layout>
+          <v-flex>
+            <v-text-field
+              label="Enter your username"
+              type="text"
+              class="input-group--focused"
+              v-model="username"
+            ></v-text-field>
+            <v-text-field
+              label="Enter your password"
+              hint="At least 8 characters"
+              min="8"
+              type="password"
+              class="input-group--focused"
+              v-model="password"
+            ></v-text-field>
+            <v-btn block color="secondary" dark @click="submitLogin()">Entrar</v-btn>
+          </v-flex>
         </v-layout>
       </v-container>
     </v-content>
@@ -43,6 +64,7 @@
 </template>
 
 <script>
+  import axios from 'axios';
   import apiendpoint from './apiendpoint';
 
   export default {
@@ -50,7 +72,24 @@
       return {
         drawer: null,
         api: apiendpoint,
+        username: '',
+        password: '',
       };
+    },
+    methods: {
+      submitLogin() {
+        axios({
+          method: 'post',
+          url: this.api.LOGIN_URL,
+          data: {
+            username: this.username,
+            password: this.password,
+            access_token: '',
+          },
+        }).then((response) => {
+          this.access_token = response.data.token;
+        }).catch(error => console.error(error));
+      },
     },
   };
 </script>

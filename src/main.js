@@ -29,10 +29,13 @@ const store = new Vuex.Store({
   secure: false,
 });
 
-// if the user isn't authenticated (has no token), redirect to login page.
 router.beforeEach((to, from, next) => {
   if (to.name !== 'login' && !store.state.token) {
-    next('login');
+    // if the user isn't authenticated (has no token), redirect to login page.
+    next({ name: 'login' });
+  } else if (to.name === 'login' && store.state.token) {
+    // if the user IS authenticated and he's trying to go to login page, redirect to home page.
+    next({ name: 'home' });
   } else {
     next();
   }

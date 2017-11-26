@@ -65,7 +65,7 @@
     },
     methods: {
       logout() {
-        this.$store.state.token = null;
+        this.$store.commit('setToken', null);
         this.$router.push({ name: 'login' });
       },
     },

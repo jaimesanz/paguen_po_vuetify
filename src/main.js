@@ -14,10 +14,23 @@ Vue.use(Vuex);
 
 Vue.config.productionTip = false;
 
+const store = new Vuex.Store({
+  state: {
+    token: null,
+  },
+  mutations: {
+    setToken(state, token) {
+      // eslint-disable-next-line no-param-reassign
+      state.token = token;
+    },
+  },
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App },
 });

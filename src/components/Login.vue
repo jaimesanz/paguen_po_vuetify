@@ -56,6 +56,9 @@
           </v-flex>
         </v-layout>
       </v-container>
+      <pre>
+        {{ $store.state.token }}
+      </pre>
     </v-content>
     <v-footer app fixed>
       <span>&copy; 2017</span>
@@ -86,7 +89,7 @@
             password: this.password,
           },
         }).then((response) => {
-          this.$emit('login', response.data.token);
+          this.$store.commit('setToken', response.data.token);
         });
       },
     },

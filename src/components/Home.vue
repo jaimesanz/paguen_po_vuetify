@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire" dark>
+  <div>
     <v-navigation-drawer
       clipped
       fixed
@@ -50,10 +50,7 @@
         </v-layout>
       </v-container>
     </v-content>
-    <v-footer app fixed>
-      <span>&copy; 2017</span>
-    </v-footer>
-  </v-app>
+  </div>
 </template>
 
 <script>

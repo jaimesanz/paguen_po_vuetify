@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import Vuex from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import Vuetify from 'vuetify';
 
 import 'vuetify/dist/vuetify.css';
@@ -24,6 +25,17 @@ const store = new Vuex.Store({
       state.token = token;
     },
   },
+  plugins: [createPersistedState()],
+  secure: false,
+});
+
+// if the user isn't authenticated (has no token), redirect to login page.
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'login' && !store.state.token) {
+    next('login');
+  } else {
+    next();
+  }
 });
 
 /* eslint-disable no-new */

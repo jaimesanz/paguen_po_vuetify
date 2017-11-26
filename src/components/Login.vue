@@ -90,6 +90,7 @@
           },
         }).then((response) => {
           this.$store.commit('setToken', response.data.token);
+          this.$router.push({ name: 'home' });
         });
       },
     },

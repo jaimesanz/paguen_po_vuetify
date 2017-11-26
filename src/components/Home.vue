@@ -23,6 +23,15 @@
             <v-list-tile-title>Settings</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
+        <v-list-tile @click="logout">
+          <v-list-tile-action>
+            <v-icon>settings</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Logout</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar app fixed clipped-left>
@@ -34,6 +43,9 @@
         <v-layout>
           <v-flex>
             <p>Wena! :D</p>
+            <pre>
+              {{ $store.state }}
+            </pre>
           </v-flex>
         </v-layout>
       </v-container>
@@ -46,16 +58,16 @@
 
 <script>
   export default {
-    props: {
-      access_token: {
-        required: true,
-        type: String,
-      },
-    },
     data() {
       return {
         drawer: null,
       };
+    },
+    methods: {
+      logout() {
+        this.$store.state.token = null;
+        this.$router.push({ name: 'login' });
+      },
     },
   };
 </script>

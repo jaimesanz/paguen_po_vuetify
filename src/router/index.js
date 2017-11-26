@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/components/Login';
+import Base from '@/components/Base';
 import Home from '@/components/Home';
 
 Vue.use(Router);
@@ -15,8 +16,15 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'base',
+      component: Base,
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: Home,
+        },
+      ],
     },
   ],
 });

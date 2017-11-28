@@ -6,6 +6,7 @@ import Settings from '@/components/Settings';
 import Home from '@/components/Home';
 import Households from '@/components/Households';
 import Household from '@/components/Household';
+import Expenses from '@/components/Expenses';
 
 Vue.use(Router);
 
@@ -42,6 +43,23 @@ export default new Router({
           name: 'household',
           component: Household,
           props: true,
+          children: [
+            {
+              path: 'expenses',
+              name: 'expenses',
+              component: Expenses,
+              props: true,
+            },
+            // {
+            //   path: 'budgets',
+            //   name: 'budgets',
+            //   component: Budgets,
+            // }, {
+            //   path: 'shopping_lists',
+            //   name: 'shopping_lists',
+            //   component: ShoppingLists,
+            // },
+          ],
         },
       ],
     },

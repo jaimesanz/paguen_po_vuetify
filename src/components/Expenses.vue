@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex>
-      <p>Gastos Vivienda {{household_id}}</p>
+      <h2>Gastos Vivienda {{household_id}}</h2>
 
       <v-data-table v-bind:headers="headers" :items="expenses"
                     hide-actions class="elevation-1">

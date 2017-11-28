@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p>Vivienda {{household_id}}</p>
+    <h1>Vivienda {{household_id}}</h1>
     <router-link :to="{ name: 'expenses' }">Gastos</router-link>
-    <!--<router-link :to="{ name: 'budgets' }">Presupuestos</router-link>-->
-    <!--<router-link :to="{ name: 'shopping_lists' }">Listas de Compras</router-link>-->
+    <router-link :to="{ name: 'budgets' }">Presupuestos</router-link>
+    <router-link :to="{ name: 'shopping_lists' }">Listas de Compras</router-link>
     <router-view></router-view>
   </div>
 </template>

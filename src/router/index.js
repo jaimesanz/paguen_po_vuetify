@@ -7,6 +7,8 @@ import Home from '@/components/Home';
 import Households from '@/components/Households';
 import Household from '@/components/Household';
 import Expenses from '@/components/Expenses';
+import Budgets from '@/components/Budgets';
+import ShoppingLists from '@/components/ShoppingLists';
 
 Vue.use(Router);
 
@@ -50,15 +52,16 @@ export default new Router({
               component: Expenses,
               props: true,
             },
-            // {
-            //   path: 'budgets',
-            //   name: 'budgets',
-            //   component: Budgets,
-            // }, {
-            //   path: 'shopping_lists',
-            //   name: 'shopping_lists',
-            //   component: ShoppingLists,
-            // },
+            {
+              path: 'budgets',
+              name: 'budgets',
+              component: Budgets,
+            },
+            {
+              path: 'shopping_lists',
+              name: 'shopping_lists',
+              component: ShoppingLists,
+            },
           ],
         },
       ],

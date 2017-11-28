@@ -5,6 +5,7 @@ import Base from '@/components/Base';
 import Settings from '@/components/Settings';
 import Home from '@/components/Home';
 import Households from '@/components/Households';
+import Household from '@/components/Household';
 
 Vue.use(Router);
 
@@ -35,6 +36,12 @@ export default new Router({
           path: '/households',
           name: 'households',
           component: Households,
+        },
+        {
+          path: 'vivienda/:household_id',
+          name: 'household',
+          component: Household,
+          props: true,
         },
       ],
     },

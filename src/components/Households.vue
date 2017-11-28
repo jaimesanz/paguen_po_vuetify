@@ -2,7 +2,9 @@
   <v-layout>
     <v-flex v-if="households.length > 0">
       <p v-for="house in households">
-        {{house.name}}
+        <router-link :to="{name: 'household', params: {household_id: house.id}}">
+          {{house.name}}
+        </router-link>
       </p>
     </v-flex>
     <v-flex v-else>

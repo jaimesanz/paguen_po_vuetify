@@ -26,18 +26,11 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile :to="{ name: 'settings' }">
-          <v-list-tile-action>
-            <v-icon>settings</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Settings</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
         <v-list-tile @click="logout">
           <v-list-tile-action>
-            <v-icon>settings</v-icon>
+            <v-icon :to="{ name: 'settings' }">
+              settings
+            </v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Logout</v-list-tile-title>
@@ -48,6 +41,10 @@
     <v-toolbar app fixed clipped-left>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>PaguenPo</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon :to="{ name: 'settings' }">
+        <v-icon>settings</v-icon>
+      </v-btn>
     </v-toolbar>
     <v-content>
       <v-container>

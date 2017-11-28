@@ -6,6 +6,7 @@ import createPersistedState from 'vuex-persistedstate';
 import Vuetify from 'vuetify';
 
 import 'vuetify/dist/vuetify.css';
+import 'font-awesome/css/font-awesome.css';
 
 import App from './App';
 import router from './router';

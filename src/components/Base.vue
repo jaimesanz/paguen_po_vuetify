@@ -17,6 +17,15 @@
           </v-list-tile-content>
         </v-list-tile>
 
+        <v-list-tile :to="{ name: 'households' }">
+          <v-list-tile-action>
+            <v-icon>home</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Households</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+
         <v-list-tile :to="{ name: 'settings' }">
           <v-list-tile-action>
             <v-icon>settings</v-icon>
@@ -43,13 +52,13 @@
     <v-content>
       <v-container>
         <router-view></router-view>
-        <v-loayout>
+        <v-layout>
           <v-flex>
             <pre>
               {{ $store.state }}
             </pre>
           </v-flex>
-        </v-loayout>
+        </v-layout>
       </v-container>
     </v-content>
   </div>
